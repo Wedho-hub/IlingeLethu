@@ -1,0 +1,262 @@
+/* global styles */
+:root {
+    --primary-color: #CCF381;
+    --font-color: #4831D4;
+    --logo-font: 'Dancing Script', cursive;
+    --general-font: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: var(--general-font);
+}
+
+.section-header{
+    display: flex; justify-content: center; align-items: center;
+    padding: 0 2% 10%;
+    margin: 2%;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+button{
+    background: var(--primary-color); color: var(--font-color);
+    cursor: pointer; transition: all .5s ease-in;
+    font-size: 1rem; letter-spacing: .1em;
+    padding: 1% 2%; margin: 10% 0 2% 32%;
+    font-weight: 900; width: 40%;
+    border-radius: 7px; border: none;
+    box-shadow: 0 0 4px 6px rgba(0, 0, 0, .3);
+    transition: transform .4s ease-in-out;
+}
+
+button:hover{
+    transform: scale(.9);
+    color: coral;
+}
+
+/* header specific styling */
+header{
+    display: flex; justify-content: space-around; align-items: center;
+    flex-direction: row;
+    height: 10vh;
+    background: var(--primary-color);
+}
+
+.logo{
+    font-family: var(--logo-font);
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand{
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+.brand-icon, .brand{
+    font-family: var(--logo-font);
+    font-size: 1.5rem;
+    color: darkgoldenrod;
+    padding: .2rem;
+    font-family: var(--logo-font);
+}
+
+.menu{
+    display: none;
+    list-style: none;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    position: absolute;
+    top: 10.3vh;
+    width: 50%;
+    height: 22vh;
+    padding: 1rem;
+    right: .6rem;
+    border-radius: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-weight: 900;
+    transition: transform 0.4s ease; 
+    transform: scale(1); /* Set initial scale */
+  }
+  
+  .menu li a:hover,
+  .menu li a:active {
+    transform: scale(1.3);
+    color: coral;
+  }
+
+.menu li{
+    padding: 5px;
+    text-align: center
+}
+
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform .4s ease;
+  }
+
+  .hamburger-btn:hover{
+    transform: scale(0.7);
+  }
+  
+  .bar {
+    color: var(--font-color);
+    width: 25px;
+    height: 4px;
+    background-color: var(--font-color);
+    margin: 4px 0;
+    transition: transform 0.4s ease;
+  }
+
+  .show-menu{
+    display: block !important;
+  }
+  
+  /* Styling for toggling the bars to form an X */
+  .open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .open .bar:nth-child(2) {
+    display: none;
+  }
+  
+  .open .bar:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  /* contact section specific styles */
+  #contact{
+    background: rgb(227, 237, 247);
+    height: 100%;
+    border-radius: 8px;
+    padding: 8% 3%;
+    margin: 4%;
+    box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
+  }
+
+  fieldset{
+    padding: 6% 0;
+    border: none;
+  }
+
+  #form-field{
+    font-size: 90%;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    gap: 2%;
+  }
+
+  input, textarea{
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+#radio-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #radio-field input{
+    width: 30%;
+    height: 10%;
+    padding: 0; margin: 0;
+  }
+
+
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  
+/* footer specific styles */
+footer{
+    background-image: url("https://cdn.f1connect.net/media/176405/funeralcaskets.jpg");
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+    font-family: var(--general-font);
+}
+
+footer .content{
+    margin: auto;
+    padding: .5rem;
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-icons{
+    padding: 0 0 1rem;
+    line-height: 1.5;
+}
+
+.contact-icons li a{
+    text-decoration: none; color: inherit;
+    padding: .3rem;
+    transition: all .4s ease;
+    transform: scale(1);
+}
+
+.contact-icons li a:hover{
+    transform: scale(1.2);
+    color: coral;
+}
+
+.social-icons{
+    padding: .6rem 0 ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+
+.social-icons li{
+    border: solid 1px whitesmoke;
+    font-size: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    transition: all .4s ease;
+}
+
+.social-icons li:hover{
+    transform: scale(1.3);
+    background-color: #CCF381;
+    color: #4831D4;
+}
+
+.social-icons li a{
+    text-decoration: none; color: inherit;
+}
+
+footer .content h1{
+    color: darkgoldenrod;
+    font-family: var(--logo-font); letter-spacing: .2rem;
+    line-height: 2;
+    font-weight: 900;
+}
+
+footer .content h3{
+    font-weight: 800;
+    line-height: 2;
+}
+
+footer .content ul{
+    list-style: none;
+}
+
