@@ -38,10 +38,16 @@ button:hover{
 
 /* header specific styling */
 header{
-    display: flex; justify-content: space-around; align-items: center;
-    flex-direction: row;
-    height: 10vh;
-    background: var(--primary-color);
+  position: fixed; top: 0; left: 0; z-index: 3;
+    display: flex; justify-content: space-around;
+    flex-direction: row; align-items: center; width: 100%;
+    height: 10vh; box-shadow: 0 0 4px 6px rgba(0, 0, 0, .3);
+    background: url("https://cdn.f1connect.net/media/176405/funeralcaskets.jpg");
+}
+
+#overlay{
+  background: rgba(0, 0, 0, .6);
+  width: 100%; height: 100%;
 }
 
 .logo{
@@ -69,15 +75,18 @@ header{
 .menu{
     display: none;
     list-style: none;
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--font-color);
-    position: absolute;
-    top: 10.3vh;
-    width: 50%;
-    height: 22vh;
+    position: relative; top: 10vh; right: 0;
+    width: 50%; height: 29%;
     padding: 1rem;
-    right: .6rem;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.show-menu{
+  display: block !important;
+  z-index: 2;
+  box-shadow: inset -6px -6px -6px rgba(0, 0, 0, .3);
 }
 
 .menu li a {
@@ -98,33 +107,31 @@ header{
     text-align: center
 }
 
-.hamburger-btn {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+.humburger-btn {
+    position: absolute; top: 29%; right: 17%;
+    display: flex; flex-direction: column;
+    cursor: pointer; z-index: 3;
     transition: transform .4s ease;
   }
 
-  .hamburger-btn:hover{
-    transform: scale(0.7);
+  .humburger-btn:hover{
+    transform: scale(0.8);
   }
   
   .bar {
-    color: var(--font-color);
-    width: 25px;
-    height: 4px;
-    background-color: var(--font-color);
-    margin: 4px 0;
+    width: 25px; height: 4px;
+    background-color: var(--primary-color);
+    margin: 12% 0; border-radius: 3px;
     transition: transform 0.4s ease;
-  }
-
-  .show-menu{
-    display: block !important;
   }
   
   /* Styling for toggling the bars to form an X */
+  .open {
+    position: absolute; top: 35%; right: 17%;
+  }
+  
   .open .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(2px) rotate(45deg);
   }
   
   .open .bar:nth-child(2) {
@@ -132,16 +139,77 @@ header{
   }
   
   .open .bar:nth-child(3) {
-    transform: translateY(-5px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
   }
 
+  /* home page specific styles */
+  #home{
+    background: rgb(236, 241, 246);
+    height: 100%; width: 98%;
+    border-radius: 8px;
+    padding: 3% 2% 3%; margin: 15vh 7% 5% 1%;
+    box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
+  }
+
+  #home-img{
+    background-color: var(--font-color);
+    width: 100%; height: auto; border-radius: 10px;
+    display: flex; justify-content: center; align-items: baseline;
+    margin-bottom: 10%;
+  }
+
+  #home-img img{
+    width: 80%; border-radius: 10px;
+  }
+
+  #home-text{
+    display: flex; justify-content: center;
+    align-items: center; flex-direction: column;
+    text-align: center;
+    width: 80;
+  }
+
+  #home-text h1{
+    line-height: 1.5; margin-bottom: 8%;
+    font-weight: 900;
+  }
+
+  #home-text p{
+    line-height: 1.5; margin: 1rem;
+  }
+
+  #home p span{
+    font-weight: 900; font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  #whatsapp{
+    margin: 2rem 3rem 1rem; position: relative;
+    left: 30%; width: 3rem; height: 3rem;
+    display: flex; justify-content: center;
+    align-items: center;
+  }
+
+  #whatsapp a{
+    font-size: 3rem; color: green;
+    transition: all .3s ease-in-out;
+  }
+
+  #whatsapp i{
+    box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);
+    line-height: .8; border-radius: 5px;
+  }
+
+  #whatsapp a:hover{
+    color: rgb(11, 72, 11);
+    transform: scale(1.2);
+  }
+  
   /* contact section specific styles */
   #contact{
-    background: rgb(227, 237, 247);
-    height: 100%;
+    background: rgb(236, 241, 246);
+    height: 100%; width: 98%;
     border-radius: 8px;
-    padding: 8% 3%;
-    margin: 4%;
+    padding: 3% 2% 3%; margin: 15vh 7% 5% 1%;
     box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
   }
 
@@ -153,24 +221,50 @@ header{
   #form-field{
     font-size: 90%;
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 1fr 8fr;
     gap: 2%;
   }
 
-  input, textarea{
-    width: 100%;
-    margin-bottom: 12px;
-  }
+  input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 97%; line-height: 2; margin: .5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+textarea:hover,
+select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus effect */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Even more prominent shadow on focus */
+  outline: none; /* Removing the default outline */
+}
 
 #radio-field {
     display: flex;
     flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
   }
 
   #radio-field input{
-    width: 30%;
-    height: 10%;
-    padding: 0; margin: 0;
+    padding: 0; margin: 4px;
   }
 
 
@@ -259,4 +353,3 @@ footer .content h3{
 footer .content ul{
     list-style: none;
 }
-
