@@ -145,9 +145,11 @@ header{
   #home{
     background: rgb(236, 241, 246);
     height: 100%; width: 98%;
-    border-radius: 8px;
+    border-radius: 8px; position: relative;
     padding: 3% 2% 3%; margin: 15vh 7% 5% 1%;
     box-shadow: 0 0 2px 3px rgba(0, 0, 0, .2);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
   }
 
   #home-img{
@@ -182,8 +184,8 @@ header{
   }
 
   #whatsapp{
-    margin: 2rem 3rem 1rem; position: relative;
-    left: 30%; width: 3rem; height: 3rem;
+    margin: 2rem 3rem 1rem;
+    width: 3rem; height: 3rem;
     display: flex; justify-content: center;
     align-items: center;
   }
@@ -215,7 +217,7 @@ header{
 
   #about h1{
     font-size: 2rem; font-weight: 900;
-    padding-bottom: 3rem; color: beige;
+    padding: 3rem; color: beige;
   }
 
   #about .content{
@@ -229,7 +231,7 @@ header{
     background: whitesmoke;
     color: var(--font-color);
     line-height: 1.5; border-radius: 8px;
-    width: auto; height: 14rem;
+    width: auto; height: 16rem;
   }
 
   #about .card i{
