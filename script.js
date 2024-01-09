@@ -14,6 +14,30 @@ function navigateToTestimonials() {
   testimonialsSection.scrollIntoView({ behavior: 'smooth' });
 }
 
+const readMoreButtons = document.querySelectorAll('.read-more');
+
+readMoreButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const additionalInfo = this.nextElementSibling;
+    additionalInfo.classList.toggle('show');
+  });
+});
+
+// let slideIndex = 0;
+// const testimonials = document.querySelectorAll('.testimonial');
+
+// function showTestimonials() {
+//     testimonials.forEach(testimonial => testimonial.style.display = 'none');
+//     slideIndex++;
+//     if (slideIndex > testimonials.length) { slideIndex = 1; }
+//     testimonials[slideIndex - 1].style.display = 'block';
+//     setTimeout(showTestimonials, 3000);
+// }
+
+// showTestimonials();
+
+
+
 // const form = document.getElementById('myForm');
 
 // form.addEventListener('submit', async function(event) {

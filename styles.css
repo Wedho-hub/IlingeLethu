@@ -76,7 +76,7 @@ header{
     list-style: none; position: relative;
     background: var(--primary-color);
     color: var(--font-color);
-    top: 2rem; right: -15rem;
+    top: 2rem; right: -18rem;
     width: 10rem; height: 29%;
     padding: 1rem; border-radius: 8px;
     transition: all .3s ease-in-out;
@@ -205,9 +205,9 @@ header{
 
   /* about section specific styles */
   #about{
-    background: var(--font-color); color: whitesmoke;
+    background: rgba(72, 49, 212);
     height: 100%; width: 98%;
-    border-radius: 8px;
+    border-radius: 8px; position: relative;
     padding: 3% 2% 3%; margin: 3rem 2rem 3rem .3rem;
     box-shadow: 0 0 5px 7px rgba(72, 49, 212, .3);
     text-align: center;
@@ -215,7 +215,7 @@ header{
 
   #about h1{
     font-size: 2rem; font-weight: 900;
-    padding-bottom: 3rem;
+    padding-bottom: 3rem; color: beige;
   }
 
   #about .content{
@@ -247,6 +247,16 @@ header{
   #about button{
     position: relative; right: 15%; 
   }
+
+  /* services specific styles */
+  #services {
+    background: rgb(236, 241, 246);
+    height: 100%; width: 98%;
+    border-radius: 8px;
+    padding: 3% 2% 3%; margin: 3rem 2rem 3rem .3rem;
+    box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
+  }
+  
   
   /* contact section specific styles */
   #contact{
@@ -364,9 +374,8 @@ footer .content{
 
 .social-icons li{
     border: solid 1px whitesmoke;
-    font-size: 1.5rem;
-    height: 2rem;
-    width: 2rem;
+    font-size: 1.5rem; border-radius: 5px;
+    height: 2rem; width: 2rem;
     text-align: center;
     transition: all .4s ease;
 }
@@ -382,7 +391,7 @@ footer .content{
 }
 
 footer .content h1{
-    color: darkgoldenrod;
+    color: rgb(230, 185, 69);
     font-family: var(--logo-font); letter-spacing: .2rem;
     line-height: 2;
     font-weight: 900;
@@ -395,6 +404,15 @@ footer .content h3{
 
 footer .content ul{
     list-style: none;
+}
+
+#tishbite{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique; font-weight: 900;
+}
+
+#copyright{
+  padding-bottom: 1.2rem;
 }
 
 /* .testimonial-slider {
