@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  const hamburgerBtn = document.getElementById('humburger-btn');
+  const hamburgerBtn = document.querySelector('.humburger-btn');
   const menu = document.querySelector('.menu');
 
   hamburgerBtn.addEventListener('click', () => {
@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function navigateToTestimonials() {
+  const testimonialsSection = document.getElementById('testimonials-section');
+  testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+}
 
 // const form = document.getElementById('myForm');
 

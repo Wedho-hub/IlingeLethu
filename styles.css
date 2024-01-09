@@ -41,7 +41,7 @@ header{
   position: fixed; top: 0; left: 0; z-index: 3;
     display: flex; justify-content: space-around;
     flex-direction: row; align-items: center; width: 100%;
-    height: 10vh; box-shadow: 0 0 4px 6px rgba(0, 0, 0, .3);
+    height: 4.5rem; box-shadow: 0 0 4px 6px rgba(0, 0, 0, .3);
     background: url("https://cdn.f1connect.net/media/176405/funeralcaskets.jpg");
 }
 
@@ -52,8 +52,7 @@ header{
 
 .logo{
     font-family: var(--logo-font);
-    width: 150px;
-    height: 60px;
+    width: 15rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,28 +64,28 @@ header{
 }
 
 .brand-icon, .brand{
+  margin: 0; padding: .2rem;
     font-family: var(--logo-font);
-    font-size: 1.5rem;
-    color: darkgoldenrod;
-    padding: .2rem;
+    font-size: 1.5rem; line-height: 2;
+    color: rgb(230, 185, 69);
     font-family: var(--logo-font);
 }
 
 .menu{
     display: none;
-    list-style: none;
+    list-style: none; position: relative;
     background: var(--primary-color);
     color: var(--font-color);
-    position: relative; top: 10vh; right: 0;
-    width: 50%; height: 29%;
-    padding: 1rem;
-    border-radius: 8px;
+    top: 2rem; right: -15rem;
+    width: 10rem; height: 29%;
+    padding: 1rem; border-radius: 8px;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0 6px 4px rgba(0, 0, 0, .3);
 }
 
 .show-menu{
   display: block !important;
   z-index: 2;
-  box-shadow: inset -6px -6px -6px rgba(0, 0, 0, .3);
 }
 
 .menu li a {
@@ -148,18 +147,18 @@ header{
     height: 100%; width: 98%;
     border-radius: 8px;
     padding: 3% 2% 3%; margin: 15vh 7% 5% 1%;
-    box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 2px 3px rgba(0, 0, 0, .2);
   }
 
   #home-img{
     background-color: var(--font-color);
-    width: 100%; height: auto; border-radius: 10px;
-    display: flex; justify-content: center; align-items: baseline;
+    width: 100%; height: 27rem; border-radius: 10px;
+    display: flex; justify-content: center; align-items: center;
     margin-bottom: 10%;
   }
 
   #home-img img{
-    width: 80%; border-radius: 10px;
+    width: 90%; height: 20rem; border-radius: 10px;
   }
 
   #home-text{
@@ -203,13 +202,58 @@ header{
     color: rgb(11, 72, 11);
     transform: scale(1.2);
   }
+
+  /* about section specific styles */
+  #about{
+    background: var(--font-color); color: whitesmoke;
+    height: 100%; width: 98%;
+    border-radius: 8px;
+    padding: 3% 2% 3%; margin: 3rem 2rem 3rem .3rem;
+    box-shadow: 0 0 5px 7px rgba(72, 49, 212, .3);
+    text-align: center;
+  }
+
+  #about h1{
+    font-size: 2rem; font-weight: 900;
+    padding-bottom: 3rem;
+  }
+
+  #about .content{
+    display: flex; flex-direction: column;
+    gap: 2rem;
+  }
+
+  #about .card{
+    display: flex; flex-direction: column;
+    justify-content: space-evenly;
+    background: whitesmoke;
+    color: var(--font-color);
+    line-height: 1.5; border-radius: 8px;
+    width: auto; height: 14rem;
+  }
+
+  #about .card i{
+    font-size: 2rem; padding: .3rem;
+  }
+
+  #about .card h3{
+    font-weight: 900;
+  }
+
+  #about .card p{
+    padding: .5rem;
+  }
+
+  #about button{
+    position: relative; right: 15%; 
+  }
   
   /* contact section specific styles */
   #contact{
     background: rgb(236, 241, 246);
     height: 100%; width: 98%;
     border-radius: 8px;
-    padding: 3% 2% 3%; margin: 15vh 7% 5% 1%;
+    padding: 3% 2% 3%; margin: 3rem 2rem 3rem .3rem;
     box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
   }
 
@@ -252,8 +296,8 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 textarea:focus,
 select:focus {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Even more prominent shadow on focus */
-  outline: none; /* Removing the default outline */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
 
 #radio-field {
@@ -266,7 +310,6 @@ select:focus {
   #radio-field input{
     padding: 0; margin: 4px;
   }
-
 
   label {
     display: flex;
@@ -331,7 +374,7 @@ footer .content{
 .social-icons li:hover{
     transform: scale(1.3);
     background-color: #CCF381;
-    color: #4831D4;
+    color: rgb(72, 49, 212);
 }
 
 .social-icons li a{
@@ -353,3 +396,34 @@ footer .content h3{
 footer .content ul{
     list-style: none;
 }
+
+/* .testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1em;
+}
+ */
