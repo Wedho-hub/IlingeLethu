@@ -38,10 +38,10 @@ button:hover{
 
 /* header specific styling */
 header{
-  position: fixed; top: 0; left: 0; z-index: 3;
+  position: sticky; top: 0; left: 0; z-index: 3;
     display: flex; justify-content: space-around;
     flex-direction: row; align-items: center; width: 100%;
-    height: 4.5rem; box-shadow: 0 0 4px 6px rgba(0, 0, 0, .3);
+    height: 5rem; box-shadow: 0 0 4px 6px rgba(0, 0, 0, .3);
     background: url("https://cdn.f1connect.net/media/176405/funeralcaskets.jpg");
 }
 
@@ -76,7 +76,7 @@ header{
     list-style: none; position: relative;
     background: var(--primary-color);
     color: var(--font-color);
-    top: 2rem; right: -18rem;
+    top: 2rem; left: 45%;
     width: 10rem; height: 29%;
     padding: 1rem; border-radius: 8px;
     transition: all .3s ease-in-out;
@@ -146,7 +146,7 @@ header{
     background: rgb(236, 241, 246);
     height: 100%; width: 98%;
     border-radius: 8px; position: relative;
-    padding: 3% 2% 3%; margin: 15vh 7% 5% 1%;
+    padding: 3% 2% 3%; margin: 10vh 7% 5% 1%;
     box-shadow: 0 0 2px 3px rgba(0, 0, 0, .2);
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
@@ -231,11 +231,12 @@ header{
     background: whitesmoke;
     color: var(--font-color);
     line-height: 1.5; border-radius: 8px;
-    width: auto; height: 16rem;
+    width: auto; height: 20rem;
   }
 
   #about .card i{
     font-size: 2rem; padding: .3rem;
+    color: rgb(192, 142, 15);
   }
 
   #about .card h3{
@@ -259,17 +260,93 @@ header{
     box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
   }
   
+  #services h1{
+    padding: 2rem; margin: 1rem;
+    text-align: center;
+  }
+
+  .service{
+    padding: .5rem; margin: 2rem;
+    background: #4831D4; border-radius: 8px;
+    display: flex; justify-content: space-between;
+    flex-direction: column; color: beige;
+    align-items: center; width: auto; height: 16rem;
+    box-shadow: 0 0 5px 3px rgba(72, 49, 212, .3);
+    transition: transform .3s ease-in-out;
+  }
+
+  .service:hover{
+    transform: scale(1.1);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .service img{
+    width: 90%; height: 60%;
+    background: rgb(192, 142, 15); padding: .5rem;
+  }
+  
+  .service figcaption{
+    text-transform: uppercase;
+  }
+
+  .read-more{
+    margin: auto;
+  }
+
+  .additional-info{
+    padding: .8rem; box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
+    background: var(--primary-color);
+    color: var(--font-color); text-align: center;
+    border-radius: 8px; width: 15rem; height: auto;
+  }
+
+  .additional-info h3{
+    line-height: 2; text-transform: capitalize;
+    text-decoration: underline; padding: .5rem;
+  }
   
   /* contact section specific styles */
   #contact{
     background: rgb(236, 241, 246);
     height: 100%; width: 98%;
-    border-radius: 8px;
+    border-radius: 8px; display: block;
     padding: 3% 2% 3%; margin: 3rem 2rem 3rem .3rem;
     box-shadow: 0 0 6px 7px rgba(0, 0, 0, .2);
   }
 
-  fieldset{
+  #contact h1{
+    padding-top: 2.5rem; font-weight: 900;
+  }
+
+  /* testimonials specific styles */
+  .testimonial-slider{
+    width: 100%; height: auto;
+    padding-bottom: 5%; overflow: hidden;
+  }
+
+  .testimonial{
+    width: 100%; height: 50vh; color: var(--primary-color);
+    display: none; text-align: center;
+    line-height: 1.5; background: var(--font-color);
+    padding: 8%;
+  }
+
+  .testimonial img{
+    width: 30%; padding: .1rem;
+    background: rgb(192, 142, 15);
+    border-radius: 50%;
+  }
+
+  .testimonial h3{
+    font-size: 1.7rem; font-weight: 900;
+    font-family: var(--logo-font);
+  }
+/* end of testimonials */
+  
+ fieldset{
     padding: 6% 0;
     border: none;
   }
@@ -328,7 +405,6 @@ select:focus {
     flex-direction: row;
     align-items: center;
   }
-  
   
 /* footer specific styles */
 footer{
@@ -408,6 +484,10 @@ footer .content ul{
     list-style: none;
 }
 
+#biz-email a:not(.fa-envelope){
+  font-size: .8rem;
+}
+
 #tishbite{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: oblique; font-weight: 900;
@@ -417,33 +497,3 @@ footer .content ul{
   padding-bottom: 1.2rem;
 }
 
-/* .testimonial-slider {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-}
-
-.testimonial {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-}
-
-.testimonial img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.testimonial h3 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.quote {
-    font-style: italic;
-    font-size: 1.1em;
-}
- */

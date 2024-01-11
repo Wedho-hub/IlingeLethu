@@ -1,5 +1,6 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  // for the humburger button
   const hamburgerBtn = document.querySelector('.humburger-btn');
   const menu = document.querySelector('.menu');
 
@@ -7,34 +8,80 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerBtn.classList.toggle('open');
     menu.classList.toggle('show-menu');
   });
+  
+  // for closing the menu when menu item is clicked
+  const menuItems = document.querySelectorAll('.menu li a');
+
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', () => {
+      menu.classList.remove('show-menu');
+    });
+  });
+  
+  // for the read-more button functionality and changing its text
+  const readMoreButtons = document.querySelectorAll('.read-more');
+  const additionalInfos = document.querySelectorAll('.additional-info');
+
+  readMoreButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      additionalInfos[index].classList.toggle('hide');
+
+      if (additionalInfos[index].classList.contains('hide')) {
+        button.textContent = 'details';
+    } else {
+        button.textContent = 'close';
+    }
+
+      additionalInfos.forEach((info, i) => {
+        if (i !== index && !additionalInfos[index].classList.contains('hide')) {
+          info.classList.add('hide');
+        }
+      });
+    });
+  });
+
+// for the functionality of the more services button`
+const hiddenService = document.querySelectorAll('.service.hide');
+const more = document.getElementById('more-services');
+
+more.addEventListener("click", () => {
+  hiddenService.forEach(service => {
+      if (service.classList.contains('hide')) {
+          service.classList.remove('hide');
+      } else {
+          service.classList.add('hide');
+      }
+  });
+
+  more.innerText = more.innerText.trim().toLowerCase() === 'more services' ? 'show less' : 'more services';
 });
 
-function navigateToTestimonials() {
-  const testimonialsSection = document.getElementById('testimonials-section');
-  testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+// testimonial slider functionality
+const testimonials = document.querySelectorAll('.testimonial');
+let index = 0;
+
+function showTestimonial() {
+    testimonials.forEach(testimonial => testimonial.style.display = 'none');
+    testimonials[index].style.display = 'block';
+
+    index = (index + 1) % testimonials.length;
 }
 
-const readMoreButtons = document.querySelectorAll('.read-more');
+setInterval(showTestimonial, 5000);
 
-readMoreButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const additionalInfo = this.nextElementSibling;
-    additionalInfo.classList.toggle('show');
-  });
-});
+const scrollToTestimonials = () => {
+  const testimonialsSection = document.querySelector('.testimonial-slider');
+  testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+};
 
-// let slideIndex = 0;
-// const testimonials = document.querySelectorAll('.testimonial');
+// review buttons functionality
+const reviewsButton = document.querySelector('.reviews-button');
 
-// function showTestimonials() {
-//     testimonials.forEach(testimonial => testimonial.style.display = 'none');
-//     slideIndex++;
-//     if (slideIndex > testimonials.length) { slideIndex = 1; }
-//     testimonials[slideIndex - 1].style.display = 'block';
-//     setTimeout(showTestimonials, 3000);
-// }
+if (reviewsButton) {
+  reviewsButton.addEventListener('click', scrollToTestimonials);
+}
 
-// showTestimonials();
+}); 
 
 
 
