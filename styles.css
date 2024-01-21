@@ -515,13 +515,14 @@ footer .content ul{
 /* tablets and over (min-width 768px) */
 @media screen and (min-width: 768px) {
   /* header specific */
-  .brand{
+  .logo{
     font-size: 1.2rem; font-family: var(--logo-font);
+    padding-top: 1.4rem; padding-left: 2rem;
   }
   
   .menu{
     display: flex; justify-content: space-around; align-items: center;
-    top: -2.3rem; left: 57%; background: none; gap: 2rem;
+    top: -3rem; left: 60%; background: none; gap: 3rem;
   }
 
   .menu li a{
@@ -556,7 +557,7 @@ footer .content ul{
   }
   
   #home-text{
-    width: 80%; background: rgba(204, 243, 129, .3);
+    width: 70%; background: rgba(204, 243, 129, .3);
     border-radius: 50% / 50%;
   }
 
@@ -626,4 +627,17 @@ footer .content ul{
     display: none;
   }
 
+}
+
+/* large screen queries */
+@media  screen and (min-width: 1100px) {
+  #services .content{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu{
+    position: fixed; box-shadow: none;
+    top: -5vh; border: none;
+    right: 4vw;
+  }
 }
