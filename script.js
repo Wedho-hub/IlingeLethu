@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   menuItems.forEach((menuItem) => {
     menuItem.addEventListener('click', () => {
       menu.classList.remove('show-menu');
+      hamburgerBtn.classList.remove('open');
     });
   });
   
@@ -41,19 +42,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 // for the functionality of the more services button`
-const hiddenService = document.querySelectorAll('.service.hide');
-const more = document.getElementById('more-services');
+const hiddenServices = document.querySelectorAll('.service.hide');
+const moreServicesButton = document.getElementById('more-services');
 
-more.addEventListener("click", () => {
-  hiddenService.forEach(service => {
-      if (service.classList.contains('hide')) {
-          service.classList.remove('hide');
-      } else {
-          service.classList.add('hide');
-      }
+function updateServicesVisibility() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 768) {
+    hiddenServices.forEach(service => {
+      service.classList.remove('hide');
+    });
+  }
+}
+
+// Initial check on page load
+updateServicesVisibility();
+
+// Event listener for window resize
+window.addEventListener('resize', updateServicesVisibility);
+
+// Toggle functionality for "more services" button
+moreServicesButton.addEventListener('click', () => {
+  hiddenServices.forEach(service => {
+    service.classList.toggle('hide');
   });
 
-  more.innerText = more.innerText.trim().toLowerCase() === 'more services' ? 'show less' : 'more services';
+  const buttonText = moreServicesButton.innerText.trim().toLowerCase();
+  moreServicesButton.innerText = buttonText === 'more services' ? 'show less' : 'more services';
 });
 
 // testimonial slider functionality
